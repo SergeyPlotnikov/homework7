@@ -18,12 +18,7 @@ class CreateMoneyTable extends Migration
             $table->unsignedInteger('currency_id')->index();
             $table->float('amount');
             $table->unsignedInteger('wallet_id')->index();
-            $table->SoftDeletes('deleted');
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_general_ci';
-            $table->engine = 'InnoDB';
-        });
-        Schema::table('money', function (Blueprint $table) {
+            $table->softDeletes('deleted');
             $table->foreign('currency_id')->references('id')->on('currency');
             $table->foreign('wallet_id')->references('id')->on('wallet');
         });

@@ -15,10 +15,7 @@ class CreateCurrencyTable extends Migration
     {
         Schema::create('currency', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',50)->unique();
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_general_ci';
-            $table->engine = 'InnoDB';
+            $table->string('name', 50)->unique();
         });
     }
 

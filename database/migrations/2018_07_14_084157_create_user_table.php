@@ -17,9 +17,6 @@ class CreateUserTable extends Migration
             $table->increments('id');
             $table->string('name', 100);
             $table->string('email', 100);
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_general_ci';
-            $table->engine = 'InnoDB';
         });
     }
 

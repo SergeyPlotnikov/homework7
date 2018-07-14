@@ -15,16 +15,12 @@ class CreateWalletTable extends Migration
     {
         Schema::create('wallet', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('user_id')->nullable();
+            $table->unsignedInteger('user_id');
             $table->softDeletes('deleted');
             $table->index('user_id');
-            $table->charset = 'utf8';
-            $table->collation = 'utf8_general_ci';
-            $table->engine = 'InnoDB';
-        });
-        Schema::table('wallet', function (Blueprint $table) {
             $table->foreign('user_id')->references('id')->on('user');
         });
+
     }
 
     /**
