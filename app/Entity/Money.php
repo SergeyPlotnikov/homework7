@@ -2,6 +2,10 @@
 
 namespace App\Entity;
 
-class Money
+use Illuminate\Database\Eloquent\Relations\Pivot;
+
+class Money extends Pivot
 {
+    public $timestamps = false;
+    protected $table = 'money';
 }
