@@ -13,6 +13,8 @@ class Wallet extends Model
     public $timestamps = false;
 
     protected $fillable = ['user_id'];
+
+    const DELETED_AT = 'deleted';
     protected $dates = ['deleted'];
 
     public function user()
@@ -23,6 +25,6 @@ class Wallet extends Model
     public function currency()
     {
         return $this->belongsToMany('App\Entity\Currency', 'money')->using('App\Entity\Money')
-            ->withPivot('amount', 'deleted')->as('money');
+            ->withPivot('amount')->as('money');
     }
 }

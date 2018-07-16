@@ -10,8 +10,6 @@ use Illuminate\Support\Collection;
 class WalletService implements WalletServiceInterface
 {
 
-
-
     public function findByUser(int $userId): ?Wallet
     {
         $user = User::find($userId);

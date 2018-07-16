@@ -12,10 +12,11 @@ class Currency extends Model
     //for creating
     protected $fillable = ['name'];
 
+
     public function wallet()
     {
         return $this->belongsToMany(Wallet::class, 'money')->using(Money::class)
-            ->withPivot('amount', 'deleted')->as('money');
+            ->withPivot('amount')->as('money');
     }
 
 }
