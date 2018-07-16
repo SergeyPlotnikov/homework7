@@ -11,9 +11,6 @@ class CurrencyTableSeeder extends Seeder
      */
     public function run()
     {
-        $currencies = ['Bitcoin', 'Ethereum', 'Litecoin', 'Mixin', 'Paypex', 'Enigma'];
-        foreach ($currencies as $currency) {
-            factory(\App\Entity\Currency::class)->create(['name'=>$currency]);
-        }
+        factory(\App\Entity\Currency::class, 10)->create();
     }
 }

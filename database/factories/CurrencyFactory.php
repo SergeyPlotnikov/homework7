@@ -2,8 +2,8 @@
 
 use Faker\Generator as Faker;
 
-$factory->define(\App\Entity\Currency::class, function (Faker $faker, array $attributes) {
+$factory->define(\App\Entity\Currency::class, function (Faker $faker) {
     return [
-        'name' => $attributes['name']
+        'name' => $faker->unique()->currencyCode
     ];
 });
