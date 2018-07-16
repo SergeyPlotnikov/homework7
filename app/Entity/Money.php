@@ -8,4 +8,5 @@ class Money extends Pivot
 {
     public $timestamps = false;
     protected $table = 'money';
+
 }

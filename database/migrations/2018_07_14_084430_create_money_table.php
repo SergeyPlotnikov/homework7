@@ -15,9 +15,9 @@ class CreateMoneyTable extends Migration
     {
         Schema::create('money', function (Blueprint $table) {
             $table->increments('id');
-            $table->unsignedInteger('currency_id')->index();
+            $table->unsignedInteger('currency_id')->nullable()->index();
             $table->float('amount');
-            $table->unsignedInteger('wallet_id')->index();
+            $table->unsignedInteger('wallet_id')->nullable()->index();
             $table->softDeletes('deleted');
             $table->foreign('currency_id')->references('id')->on('currency');
             $table->foreign('wallet_id')->references('id')->on('wallet');

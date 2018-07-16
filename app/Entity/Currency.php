@@ -15,4 +15,5 @@ class Currency extends Model
         return $this->belongsToMany(Wallet::class, 'money')->using(Money::class)
             ->withPivot('amount', 'deleted')->as('money');
     }
+
 }
