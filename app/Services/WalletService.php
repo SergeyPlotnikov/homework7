@@ -5,13 +5,12 @@ namespace App\Services;
 use App\Entity\User;
 use App\Entity\Wallet;
 use App\Requests\CreateWalletRequest;
-use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Support\Collection;
 
 class WalletService implements WalletServiceInterface
 {
 
-    use SoftDeletes;
+
 
     public function findByUser(int $userId): ?Wallet
     {
