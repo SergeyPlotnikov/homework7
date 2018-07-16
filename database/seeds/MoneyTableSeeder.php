@@ -32,14 +32,6 @@ class MoneyTableSeeder extends Seeder
             }
         }
 
-
-
-
-//            ->each(function ($money) use ($faker) {
-//            $money->currency()->attach(\App\Entity\Currency::all()->random(1));
-//            $money->wallet()->attach(\App\Entity\Wallet::all()->random(3));
-
-//    });
     }
 
 }
